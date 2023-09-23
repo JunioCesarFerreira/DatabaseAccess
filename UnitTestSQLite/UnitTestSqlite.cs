@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using DatabaseAccess;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestSQLite
@@ -51,11 +52,12 @@ namespace UnitTestSQLite
             DbAccess dbAccess = new DbAccess(ConnectionString, BuildDb.RecognizedTypes.Sqlite);
             try
             {
+                List<string> queries = new List<string>();
                 for (int i = 1; i <= 10; i++)
                 {
-                    string query = string.Format(insertTable, i.ToString(), "Value " + i.ToString());
-                    dbAccess.QueryEdit(query);
+                    queries.Add(string.Format(insertTable, i.ToString(), "Value " + i.ToString()));
                 }
+                dbAccess.QueryEdit(string.Join(";", queries));
                 DataTable dataTable = dbAccess.QuerySelect("SELECT * FROM TEST_TABLE");
                 Assert.AreEqual(10, dataTable.Rows.Count);
                 for (int i = 1; i <= 10; i++)
@@ -76,11 +78,13 @@ namespace UnitTestSQLite
             DbAccess dbAccess = new DbAccess(ConnectionString, BuildDb.RecognizedTypes.Sqlite);
             try
             {
-                for (int i = 1; i <= 10; i++)
+                List<string> queries = new List<string>();
+                for (int i = 0; i <= 10; i++)
                 {
                     string query = string.Format(updateTable, i.ToString(), "Value " + i.ToString("N3"));
-                    dbAccess.QueryEdit(query);
+                    queries.Add(query);
                 }
+                dbAccess.QueryEdit(string.Join(";", queries));
                 DataTable dataTable = dbAccess.QuerySelect("SELECT * FROM TEST_TABLE");
                 Assert.AreEqual(10, dataTable.Rows.Count);
                 for (int i = 1; i <= 10; i++)

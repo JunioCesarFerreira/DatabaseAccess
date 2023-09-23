@@ -12,13 +12,16 @@ namespace DatabaseAccess
         public DbConnectionIsNotRecognizedException() : base("Database connection type is not recognized.") { }
     }
 
+    public enum RecognizedTypes
+    {
+        SqlClient, 
+        OleDb, 
+        Odbc, 
+        Sqlite
+    }
+
     public static class BuildDb
     {
-        public enum RecognizedTypes
-        {
-            SqlClient, OleDb, Odbc, Sqlite
-        }
-
         public static bool IsItARecognizedType(DbConnection dbConnection)
         {
             Type type = dbConnection.GetType();

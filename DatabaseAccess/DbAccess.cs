@@ -3,23 +3,19 @@ using System.Data.Common;
 
 namespace DatabaseAccess
 {
+    public abstract class DbAccessFactory
+    {
+
+    }
+
     public class DbAccess
     {
-        private readonly DbConnection DbConnection;
+        private readonly DbConnection _dbConnection;
         public int CommandTimeout = 0;
-
-        public DbAccess(DbConnection databaseConnection)
-        {
-            DbConnection = databaseConnection;
-            if (!BuildDb.IsItARecognizedType(databaseConnection))
-            {
-                throw new DbConnectionIsNotRecognizedException();
-            }
-        }
 
         public DbAccess(string connectionString, BuildDb.RecognizedTypes dbType)
         {
-            DbConnection = BuildDb.Connection(connectionString, dbType);
+            _dbConnection = BuildDb.Connection(connectionString, dbType);
         }
 
         public bool CheckConnection()
@@ -27,7 +23,7 @@ namespace DatabaseAccess
             bool result = true;
             try
             {
-                DbConnection.Open();
+                _dbConnection.Open();
             }
             catch
             {
@@ -35,14 +31,14 @@ namespace DatabaseAccess
             }
             finally
             {
-                DbConnection.Close();
+                _dbConnection.Close();
             }
             return result;
         }
 
         public int QueryEdit(string query)
         {
-            if (BuildDb.Command(DbConnection, query, out DbCommand dbCommand))
+            if (BuildDb.Command(_dbConnection, query, out DbCommand dbCommand))
             {
                 dbCommand.Connection.Open();
                 dbCommand.CommandTimeout = CommandTimeout;
@@ -58,7 +54,7 @@ namespace DatabaseAccess
 
         public DataTable QuerySelect(string query)
         {
-            if (BuildDb.DataAdapter(DbConnection, query, out DbDataAdapter dbDataAdapter))
+            if (BuildDb.DataAdapter(_dbConnection, query, out DbDataAdapter dbDataAdapter))
             {
                 dbDataAdapter.SelectCommand.Connection.Open();
                 dbDataAdapter.SelectCommand.CommandTimeout = CommandTimeout;
