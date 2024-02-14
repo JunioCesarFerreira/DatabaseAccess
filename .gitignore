@@ -1,3 +1,96 @@
-﻿*.testlog
+# Arquivos de compilação e Binários
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+[Dd]ebug*/
+[Rr]elease*/
+x64/
+x86/
+[Aa]rtifacts/
+build/
+bld/
+[Bb]uild[Ll]og.*
+*Roslyn*.dll
+
+# Ferramentas de Teste
+[TestR]esult*/
+[Tt]est[Rr]esult*
+[Tt]est[Dd]ata/
+*.VisualState.xml
+TestResult.xml
+
+# Arquivos de pacotes NuGet
+*.nupkg
+*.snupkg
+# Pasta 'packages' usada pelo NuGet
+**/[Pp]ackages/
+# Pasta `global-packages` do NuGet (descomente se necessário)
+# !global-packages/
+
+# Arquivos de configuração do usuário para Visual Studio
+*.user
+*.userosscache
 *.suo
-*.cache
+*.userprefs
+*.DotSettings.user
+# Configurações da equipe Visual Studio
+*.DotSettings
+
+# Arquivos temporários do Visual Studio
+.vs/
+.vscode/
+
+# Arquivos de configuração de projetos (descomente se necessário)
+# Directory.Build.props
+# Directory.Build.targets
+
+# Arquivos de Banco de Dados SQL Server
+*.mdf
+*.ldf
+
+# Ferramentas de Desenvolvimento
+_ReSharper*/
+*.resharper
+[Tt]humbs.db
+[Dd]esktop.ini
+*.swp
+*~
+*.lock.json
+project.lock.json
+# Descomente se você tiver tarefas que criam outros arquivos que você não deseja rastrear
+# !**/node_modules/
+
+# Arquivos de configuração específicos do sistema operacional
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Arquivos de imagem de disco
+*.iso
+*.dmg
+*.img
+*.vhd
+*.vhdx
+
+# Arquivos de arquivo (comprimidos)
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# Ferramentas de CI/CD
+.azure-pipelines/
+.github/
+.gitlab/
+
+# Arquivos e pastas gerados por ferramentas populares
+/coverage/
+*.coverlet
+*.opencover
+*.coverage
+*.coverage.xml
+*.coveragexml
+*.nycrc
+*.nyc_output
