@@ -6,7 +6,8 @@ O projeto DatabaseAccess oferece uma solução robusta e flexível para abstrair
 
 Neste repositório são apresentados dois projetos:
 - `DatabaseAccess` um projeto de Library .NET para abstração de conexão a multiplos tipos de banco de dados.
--`UnitTestSQLite` projeto com testes de unidade que realiza alguns testes na biblioteca DatabaseAccess utilizando um banco local SQLite.
+
+- `UnitTestSQLite` projeto com testes de unidade que realiza alguns testes na biblioteca DatabaseAccess utilizando um banco local SQLite.
 
 ### Pré-requistos e execução
 
