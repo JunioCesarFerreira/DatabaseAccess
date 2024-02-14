@@ -3,11 +3,6 @@ using System.Data.Common;
 
 namespace DatabaseAccess
 {
-    public abstract class DbAccessFactory
-    {
-
-    }
-
     public class DbAccess
     {
         private readonly DbConnection _dbConnection;
