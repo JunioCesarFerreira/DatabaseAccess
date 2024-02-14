@@ -24,7 +24,7 @@ namespace UnitTestSQLite
             try
             {
                 System.IO.File.Delete(fileDbSqlite);
-                new DbAccess(ConnectionString, BuildDb.RecognizedTypes.Sqlite);
+                new DbAccess(ConnectionString, RecognizedTypes.Sqlite);
             }
             catch (Exception e)
             {
@@ -35,7 +35,7 @@ namespace UnitTestSQLite
         [TestMethod]
         public void Test2_CreateTable()
         {
-            DbAccess dbAccess = new DbAccess(ConnectionString, BuildDb.RecognizedTypes.Sqlite);
+            DbAccess dbAccess = new DbAccess(ConnectionString, RecognizedTypes.Sqlite);
             try
             {
                 dbAccess.QueryEdit(createTable);
@@ -49,7 +49,7 @@ namespace UnitTestSQLite
         [TestMethod]
         public void Test3_InsertTable()
         {
-            DbAccess dbAccess = new DbAccess(ConnectionString, BuildDb.RecognizedTypes.Sqlite);
+            DbAccess dbAccess = new DbAccess(ConnectionString, RecognizedTypes.Sqlite);
             try
             {
                 List<string> queries = new List<string>();
@@ -75,7 +75,7 @@ namespace UnitTestSQLite
         [TestMethod]
         public void Test4_UpdateTable()
         {
-            DbAccess dbAccess = new DbAccess(ConnectionString, BuildDb.RecognizedTypes.Sqlite);
+            DbAccess dbAccess = new DbAccess(ConnectionString, RecognizedTypes.Sqlite);
             try
             {
                 List<string> queries = new List<string>();
@@ -102,7 +102,7 @@ namespace UnitTestSQLite
         [TestMethod]
         public void Test5_DeleteTable()
         {
-            DbAccess dbAccess = new DbAccess(ConnectionString, BuildDb.RecognizedTypes.Sqlite);
+            DbAccess dbAccess = new DbAccess(ConnectionString, RecognizedTypes.Sqlite);
             try
             {
                 string query = string.Format(deleteTable, "IDENTIFIER=8");
@@ -120,7 +120,7 @@ namespace UnitTestSQLite
         [TestMethod]
         public void Test6_SelectTable()
         {
-            DbAccess dbAccess = new DbAccess(ConnectionString, BuildDb.RecognizedTypes.Sqlite);
+            DbAccess dbAccess = new DbAccess(ConnectionString, RecognizedTypes.Sqlite);
             try
             {
                 string query = string.Format(selectTable, "IDENTIFIER=1");

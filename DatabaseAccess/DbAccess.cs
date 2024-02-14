@@ -13,7 +13,7 @@ namespace DatabaseAccess
         private readonly DbConnection _dbConnection;
         public int CommandTimeout = 0;
 
-        public DbAccess(string connectionString, BuildDb.RecognizedTypes dbType)
+        public DbAccess(string connectionString, RecognizedTypes dbType)
         {
             _dbConnection = BuildDb.Connection(connectionString, dbType);
         }
