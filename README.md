@@ -62,6 +62,8 @@ int affectedRows = dbAccess.QueryEdit("SEU_COMANDO_SQL_AQUI");
 Console.WriteLine($"{affectedRows} linhas afetadas.");
 ```
 
+Para mais exemplos [veja o arquivo de testes](./project/UnitTestSQLite/UnitTestSqlite.cs).
+
 ---
 
 
