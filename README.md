@@ -10,7 +10,7 @@ Neste repositório são apresentados dois projetos:
 
 ### Pré-requistos e execução
 
-Tendo o Visual Studio (2019) instalado abra o arquivo `DatabaseAccess.sln` e execute os testes de unidade.
+Tendo o Visual Studio (2019) instalado abra o arquivo `DatabaseAccess.sln` e execute os [testes de unidade](./project/UnitTestSQLite/UnitTestSqlite.cs).
 
 Embora o projeto original seja implementado com Visual Studio 2019 e .NET framework 4.7. Os projetos podem ser facilmente migrados para o .NET.
 
