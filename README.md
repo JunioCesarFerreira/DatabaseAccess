@@ -12,6 +12,8 @@ Neste repositório são apresentados dois projetos:
 
 Tendo o Visual Studio (2019) instalado abra o arquivo `DatabaseAccess.sln` e execute os testes de unidade.
 
+Embora o projeto original seja implementado com Visual Studio 2019 e .NET framework 4.7. Os projetos podem ser facilmente migrados para o .NET.
+
 ## Características Principais
 
 - **Abstração de Conexão**: Permite conexões com múltiplos tipos de bancos de dados através de uma interface comum.
