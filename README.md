@@ -23,6 +23,7 @@ Embora o projeto original seja implementado com Visual Studio 2019 e .NET framew
 ## Classes Principais
 
 - **`DbAccess`**: Classe responsável por executar operações no banco de dados. Utiliza uma conexão (`DbConnection`) que é configurada dinamicamente com base no tipo do banco de dados. [Ver código](./project/DatabaseAccess/DbAccess.cs)
+
 - **`BuildDb`**: Classe estática que fornece métodos para criar objetos `DbConnection` específicos do tipo de banco de dados desejado, definidos pela enumeração `RecognizedTypes`. [Ver código](./project/DatabaseAccess/BuildDb.cs)
 
 ## Como Usar
